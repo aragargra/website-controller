@@ -1,0 +1,7 @@
+apiVersion: extensions.example.com/v1
+kind: Website
+metadata:
+  name: mi-website
+spec:
+  gitRepo: https://github.com/aragargra/kubia-website-example.git
+  puerto: 30100

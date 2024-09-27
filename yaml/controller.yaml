@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: website-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: website-controller
+  template:
+    metadata:
+      labels:
+        app: website-controller
+    spec:
+      serviceAccountName: website-controller
+      containers:
+      - name: main
+        image: araceli96/website-controller
+      - name: proxy
+        image: luksa/kubectl-proxy:1.6.2
